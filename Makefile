@@ -3,7 +3,8 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = Mandatory/main.c
+SRC = Mandatory/main.c \
+		Mandatory/GC/GC.c
 OBJS = $(SRC:.c=.o)
 
 all: $(NAME)

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   Core.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 17:33:58 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 17:49:27 by sdaban           ###   ########.fr       */
+/*   Created: 2026/04/30 17:34:48 by sdaban            #+#    #+#             */
+/*   Updated: 2026/04/30 17:50:18 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "GC/GC.h"
+#ifndef CORE_H
+# define CORE_H
 
-int	main(int argc, char **argv)
+typedef struct s_core
 {
-	(void)argc;
-	(void)argv;
-	printf("Hello, World!\n");
-	return (0);
-}
+	int	temp;
+}	t_core;
+#endif
