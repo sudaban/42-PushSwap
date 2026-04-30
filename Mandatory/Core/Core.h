@@ -6,12 +6,14 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 17:34:48 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 18:44:29 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/04/30 18:56:36 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CORE_H
 # define CORE_H
+
+# include "../GC/GC.h"
 
 typedef struct s_stack
 {
@@ -32,4 +34,5 @@ typedef struct s_core
 }	t_core;
 
 void	init_core(t_core *core);
+t_stack	*create_node(int value);
 #endif
