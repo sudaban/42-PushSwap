@@ -4,7 +4,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = Mandatory/main.c \
-		Mandatory/GC/GC.c
+		Mandatory/GC/GC.c \
+		Mandatory/OP/Operations.c \
 OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
