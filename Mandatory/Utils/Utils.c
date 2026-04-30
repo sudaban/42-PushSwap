@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   Utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 17:33:58 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 17:55:51 by sdaban           ###   ########.fr       */
+/*   Created: 2026/04/30 17:56:37 by sdaban            #+#    #+#             */
+/*   Updated: 2026/04/30 17:58:37 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "GC/GC.h"
-
-int	main(int argc, char **argv)
+#include "Utils.h"
+size_t	ft_strlen(char *str)
 {
-    if (argc < 2)
-        return (1);
+	size_t	len;
 
-	return (0);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }

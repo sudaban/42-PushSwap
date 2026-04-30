@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   Utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 17:33:58 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 17:55:51 by sdaban           ###   ########.fr       */
+/*   Created: 2026/04/30 17:56:39 by sdaban            #+#    #+#             */
+/*   Updated: 2026/04/30 17:58:24 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "GC/GC.h"
+#ifndef UTILS_H
+# define UTILS_H
 
-int	main(int argc, char **argv)
-{
-    if (argc < 2)
-        return (1);
+# include <stddef.h>
 
-	return (0);
-}
+size_t		ft_strlen(char *str);
+
+#endif
