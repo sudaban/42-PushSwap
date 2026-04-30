@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Utils.h                                            :+:      :+:    :+:   */
+/*   Core.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 17:56:39 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 18:37:55 by sdaban           ###   ########.fr       */
+/*   Created: 2026/04/30 17:34:48 by sdaban            #+#    #+#             */
+/*   Updated: 2026/04/30 18:44:29 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef CORE_H
+# define CORE_H
 
-# include <stddef.h>
-# include <stdbool.h>
+typedef struct s_stack
+{
+	int				m_value;
+	int				m_index;
+	int				m_pos;
+	int				m_cost_a;
+	int				m_cost_b;
+	struct s_stack	*m_target_node;
+	struct s_stack	*m_next;
+	struct s_stack	*m_prev;
+}	t_stack;
 
-size_t		ft_strlen(char *str);
-bool		ft_is_in_limit(int num);
+typedef struct s_core
+{
+	t_stack	*a;
+	t_stack	*b;
+}	t_core;
+
+void	init_core(t_core *core);
 #endif

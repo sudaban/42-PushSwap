@@ -1,3 +1,4 @@
 venv
 .vscode
 push_swap
+obj/

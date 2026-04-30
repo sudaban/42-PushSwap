@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Core.h                                             :+:      :+:    :+:   */
+/*   Core.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 17:34:48 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 17:50:18 by sdaban           ###   ########.fr       */
+/*   Created: 2026/04/30 18:41:22 by sdaban            #+#    #+#             */
+/*   Updated: 2026/04/30 18:44:51 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CORE_H
-# define CORE_H
+#include "Core.h"
+#include <stddef.h>
 
-typedef struct s_core
+void	init_core(t_core *core)
 {
-	int	temp;
-}	t_core;
-#endif
+	core->a = NULL;
+	core->b = NULL;
+}
