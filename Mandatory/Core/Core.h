@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 17:34:48 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 18:56:36 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/04/30 19:01:45 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ typedef struct s_core
 
 void	init_core(t_core *core);
 t_stack	*create_node(int value);
+void	push_to_stack(t_stack **stack, t_stack *node);
 #endif

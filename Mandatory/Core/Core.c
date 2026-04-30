@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 18:41:22 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 18:56:36 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/04/30 19:01:45 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,14 @@ t_stack	*create_node(int value)
 	node->m_next = NULL;
 	node->m_prev = NULL;
 	return (node);
+}
+
+void	push_to_stack(t_stack **stack, t_stack *node)
+{
+	if (!stack || !node)
+		return ;
+	node->m_next = *stack;
+	if (*stack)
+		(*stack)->m_prev = node;
+	*stack = node;
 }

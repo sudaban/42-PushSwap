@@ -7,6 +7,9 @@ SRC = Mandatory/main.c \
       Mandatory/GC/GC.c \
       Mandatory/OP/Operations.c \
       Mandatory/Utils/Utils.c \
+      Mandatory/Utils/String.c \
+      Mandatory/Utils/Parse.c \
+      Mandatory/Utils/Print.c \
       Mandatory/Core/Core.c
 
 OBJ_DIR = obj
