@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 19:20:00 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 19:24:22 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/05/07 20:48:27 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	write_number(int num)
 {
 	char	buf[20];
 	int		len;
-	int		temp;
+	long	temp;
 	int		is_neg;
 
 	len = 0;

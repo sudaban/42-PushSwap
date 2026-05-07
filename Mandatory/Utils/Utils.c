@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 17:56:37 by sdaban            #+#    #+#             */
-/*   Updated: 2026/05/07 20:28:43 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/05/07 20:42:56 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,23 @@ int	ft_atoi_checked(char *str, bool *error)
 	long	result;
 	int		sign;
 	int		i;
+	int		len;
 
 	if (!ft_is_digit(str))
-	{
-		*error = 1;
-		return (0);
-	}
+		return (*error = 1, 0);
 	*error = 0;
-	result = 0;
 	sign = 1;
 	i = 0;
 	if (str[0] == '-')
 		sign = -1;
 	if (str[0] == '-' || str[0] == '+')
 		i = 1;
+	len = 0;
+	while (str[i + len])
+		len++;
+	if (len > 10)
+		return (*error = 1, 0);
+	result = 0;
 	while (str[i])
 		result = result * 10 + (str[i++] - '0');
 	if (result * sign > INT_MAX || result * sign < INT_MIN)
