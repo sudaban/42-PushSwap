@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 19:15:00 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 19:19:53 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/05/07 20:24:52 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,26 @@ static int	parse_split_args(char **split_args, t_core *core)
 	return (0);
 }
 
+static int	check_duplicates(t_stack *stack)
+{
+	t_stack	*current;
+	t_stack	*compare;
+
+	current = stack;
+	while (current)
+	{
+		compare = current->m_next;
+		while (compare)
+		{
+			if (current->m_value == compare->m_value)
+				return (1);
+			compare = compare->m_next;
+		}
+		current = current->m_next;
+	}
+	return (0);
+}
+
 int	parse_arguments(int argc, char **argv, t_core *core)
 {
 	char	**split_args;
@@ -56,15 +76,24 @@ int	parse_arguments(int argc, char **argv, t_core *core)
 	{
 		split_args = split_string(argv[1]);
 		if (split_args)
-			return (parse_split_args(split_args, core));
-		return (add_arg_to_stack(argv[1], core));
-	}
-	i = 1;
-	while (i < argc)
-	{
-		if (add_arg_to_stack(argv[i], core))
+		{
+			if (parse_split_args(split_args, core))
+				return (1);
+		}
+		else if (add_arg_to_stack(argv[1], core))
 			return (1);
-		i++;
 	}
+	else
+	{
+		i = 1;
+		while (i < argc)
+		{
+			if (add_arg_to_stack(argv[i], core))
+				return (1);
+			i++;
+		}
+	}
+	if (check_duplicates(core->a))
+		return (1);
 	return (0);
 }

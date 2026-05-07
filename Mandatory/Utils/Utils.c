@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 17:56:37 by sdaban            #+#    #+#             */
-/*   Updated: 2026/04/30 19:24:33 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/05/07 20:28:43 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_message(char *str, int is_error)
 	if (is_error)
 	{
 		write(2, "Error\n", 6);
-		exit(1);
+		memory_cleanup(1);
 	}
 	write(1, str, ft_strlen(str));
 	write(1, "\n", 1);
