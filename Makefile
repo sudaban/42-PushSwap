@@ -6,6 +6,10 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = Mandatory/main.c \
       Mandatory/GC/GC.c \
       Mandatory/OP/Operations.c \
+      Mandatory/OP/Swap.c \
+      Mandatory/OP/Push.c \
+      Mandatory/OP/Rotate.c \
+      Mandatory/OP/ReverseRotate.c \
       Mandatory/Utils/Utils.c \
       Mandatory/Utils/String.c \
       Mandatory/Utils/Parse.c \

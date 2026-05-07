@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ReverseRotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 18:45:55 by sdaban            #+#    #+#             */
+/*   Created: 2026/05/07 20:30:00 by sdaban            #+#    #+#             */
 /*   Updated: 2026/05/07 20:32:03 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "GC/GC.h"
-#include "Core/Core.h"
-#include "Utils/Utils.h"
-#include "OP/Operations.h"
+#include "Operations.h"
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+void	rra(t_core *core)
 {
-	t_core	god_object;
+	if (!core)
+		return ;
+	reverse_rotate_stack(&core->a);
+	write(1, "rra\n", 4);
+}
 
-	if (argc < 2)
-		ft_message("Error", 1);
-	init_core(&god_object);
-	if (parse_arguments(argc, argv, &god_object) != 0)
-		ft_message("Error", 1);
-	print_stack(god_object.a, "Stack A");
-	memory_cleanup(0);
-	return (0);
+void	rrb(t_core *core)
+{
+	if (!core)
+		return ;
+	reverse_rotate_stack(&core->b);
+	write(1, "rrb\n", 4);
+}
+
+void	rrr(t_core *core)
+{
+	if (!core)
+		return ;
+	reverse_rotate_stack(&core->a);
+	reverse_rotate_stack(&core->b);
+	write(1, "rrr\n", 4);
 }

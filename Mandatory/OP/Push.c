@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   Push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdaban <sdaban@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 18:45:55 by sdaban            #+#    #+#             */
+/*   Created: 2026/05/07 20:30:00 by sdaban            #+#    #+#             */
 /*   Updated: 2026/05/07 20:32:03 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "GC/GC.h"
-#include "Core/Core.h"
-#include "Utils/Utils.h"
-#include "OP/Operations.h"
+#include "Operations.h"
+#include <unistd.h>
 
-int	main(int argc, char **argv)
+void	pa(t_core *core)
 {
-	t_core	god_object;
+	if (!core)
+		return ;
+	push_stack(&core->a, &core->b);
+	write(1, "pa\n", 3);
+}
 
-	if (argc < 2)
-		ft_message("Error", 1);
-	init_core(&god_object);
-	if (parse_arguments(argc, argv, &god_object) != 0)
-		ft_message("Error", 1);
-	print_stack(god_object.a, "Stack A");
-	memory_cleanup(0);
-	return (0);
+void	pb(t_core *core)
+{
+	if (!core)
+		return ;
+	push_stack(&core->b, &core->a);
+	write(1, "pb\n", 3);
 }
